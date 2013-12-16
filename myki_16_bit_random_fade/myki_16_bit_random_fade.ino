@@ -120,7 +120,7 @@ void setup()  {
   WHITE = 0x0000;
   
   color.h = 0;
-  color.s = saturation;
+  color.s = maxsaturation;
   color.i = 0;
   color.htarget = 0;
   color.starget = maxsaturation;
@@ -164,8 +164,7 @@ void sendcolor() {
   RED = rgbw[0];
   GREEN = rgbw[1];
   BLUE = rgbw[2];
-  TC4H = rgbw[3] >> 8; // High 2 bits of white PWM.
-  WHITE = 0xFF & rgbw[3]; // Low 8 bits of white PWM.
+  WHITE = rgbw[3];
 }
   
 void loop()  {
